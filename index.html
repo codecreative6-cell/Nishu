@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday Nishu 🎂</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- CUSTOM CURSOR -->
+  <div id="cursor"></div>
+  <div id="cursor-trail"></div>
+
+  <!-- SPLASH SCREEN -->
+  <div id="splash">
+    <div class="splash-text">🎂 Happy Birthday 🎂</div>
+    <div class="splash-sub">Loading something special...</div>
+    <div class="splash-progress">
+      <div class="splash-bar"></div>
+    </div>
+  </div>
+
+  <!-- CANVASES -->
+  <canvas id="stars-canvas"></canvas>
+  <canvas id="confetti-canvas"></canvas>
+  <canvas id="fireworks-canvas"></canvas>
+
+  <!-- BALLOONS -->
+  <div class="balloons-container" id="balloons"></div>
+
+  <!-- ═══════════════════════════ HERO ═══════════════════════════ -->
+  <section id="hero">
+    <!-- sparkle particles -->
+    <div class="hero-sparkle-field" id="heroSparkles"></div>
+
+    <div class="hero-left">
+      <div class="hero-photo-frame">
+        <div class="hero-photo-glow"></div>
+        <img src="img/IMG%20(1).jpg" alt="Nishu" />
+        <div class="hero-photo-badge">
+          <span class="dot"></span>
+          <span>Birthday Queen</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="hero-tag">✦ A Very Special Day ✦</div>
+      <div class="hero-title">Happy Birthday</div>
+      <div class="hero-name">Nishu</div>
+      <div class="hero-subtitle">
+        May every moment of your day be filled with the same warmth and beauty you bring to everyone around you 💖
+      </div>
+      <div class="hero-date-ribbon">
+        <div class="date-num">19</div>
+        <div class="date-divider"></div>
+        <div class="date-text">May<br />2026</div>
+      </div>
+    </div>
+
+    <div class="scroll-hint">↓ scroll for memories ↓</div>
+  </section>
+
+  <!-- ═══════════════════════════ PORTRAIT ═══════════════════════════ -->
+  <section id="portrait">
+    <div class="portrait-bg"><img src="img/IMG%20(17).jpg" alt="Nishu portrait" /></div>
+    <div class="portrait-overlay"></div>
+    <div class="portrait-content">
+      <div class="portrait-label">✦ A PORTRAIT</div>
+      <div class="portrait-quote">"To know her is to love her — and to love her is the greatest joy."</div>
+    </div>
+    <div class="portrait-dot"></div>
+  </section>
+
+  <!-- ═══════════════════════════ BIRTHDAY MESSAGE ═══════════════════════════ -->
+  <section id="bday-message">
+    <div class="bday-msg-grid">
+      <div class="bday-msg-photos">
+        <div class="badge-circle">Birthday<br />Girl</div>
+        <img class="photo-main" src="img/IMG%20(3).jpg" alt="Nishu" loading="lazy" />
+        <img class="photo-small" src="img/IMG%20(5).jpg" alt="Nishu" loading="lazy" />
+      </div>
+      <div class="bday-msg-right">
+        <div class="bday-msg-label">✦ A BIRTHDAY MESSAGE ✦</div>
+        <h2>To the most <em>wonderful</em> person</h2>
+        <p class="bday-body">
+          On this beautiful day, I want you to know that you are truly one of a kind. Your smile lights up every room,
+          your laughter is the best soundtrack to any moment, and your heart — warm, generous, and endlessly kind —
+          makes the world genuinely better. May this birthday bring you everything you deserve: joy without measure,
+          love without end, and all the beautiful surprises life has in store for someone as extraordinary as you.
+        </p>
+        <div class="bday-sign">Happy Birthday, Nishu <span class="sign-star">✦</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ POLAROID GALLERY ═══════════════════════════ -->
+  <section id="gallery">
+    <div class="section-title gold">Beautiful Moments</div>
+    <div class="section-divider"><span></span><i>✦</i><span></span></div>
+    <div class="polaroid-grid" id="polaroid-grid"></div>
+  </section>
+
+  <!-- ═══════════════════════════ MEMORIES TIMELINE ═══════════════════════════ -->
+  <section id="memories">
+    <div class="section-title pink">Memory Lane</div>
+    <div class="section-divider"><span></span><i>💕</i><span></span></div>
+    <div class="timeline" id="timeline"></div>
+  </section>
+
+  <!-- ═══════════════════════════ CAKE ═══════════════════════════ -->
+  <section id="cake-section">
+    <div class="section-title pink">Make a Wish 🎂</div>
+    <div class="section-divider"><span></span><i>🎂</i><span></span></div>
+    <p style="color:#fff9;margin-bottom:2rem">click the cake to blow out all the candles</p>
+
+    <div class="cake-wrap" id="cakeWrap" onclick="blowCandles()">
+      <div class="cake-emoji-container">
+        <div class="cake-emoji-float">🎂</div>
+        <div class="cake-candle-row">
+          <div class="cake-candle-stick c-orange">
+            <div class="flame-tip" id="f1"></div>
+            <div class="wick"></div>
+            <div class="stick"></div>
+          </div>
+          <div class="cake-candle-stick c-purple">
+            <div class="flame-tip" id="f2"></div>
+            <div class="wick"></div>
+            <div class="stick"></div>
+          </div>
+          <div class="cake-candle-stick c-green">
+            <div class="flame-tip" id="f3"></div>
+            <div class="wick"></div>
+            <div class="stick"></div>
+          </div>
+          <div class="cake-candle-stick c-red">
+            <div class="flame-tip" id="f4"></div>
+            <div class="wick"></div>
+            <div class="stick"></div>
+          </div>
+          <div class="cake-candle-stick c-blue">
+            <div class="flame-tip" id="f5"></div>
+            <div class="wick"></div>
+            <div class="stick"></div>
+          </div>
+        </div>
+        <div class="cake-tier cake-tier-top">🌿🌸🌿</div>
+        <div class="cake-tier cake-tier-mid">✨ Nishu ✨</div>
+        <div class="cake-tier cake-tier-bottom">Happy Birthday 🎂</div>
+      </div>
+      <div class="cake-msg">Happy Birthday Nishu! 🎂</div>
+      <div class="blow-hint" id="blow-hint">🖱 Click to blow out candles</div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ WISHES ═══════════════════════════ -->
+  <section id="wishes">
+    <div class="section-title gold">Wishing You...</div>
+    <div class="section-divider"><span></span><i>💫</i><span></span></div>
+    <div class="wishes-grid">
+      <div class="wish-card"
+        style="--card-bg:#ff6b9d11;--card-bg2:#ff6b9d05;--card-border:#ff6b9d25;--card-glow:var(--pink);--delay:.1s">
+        <span class="wish-icon">❤️</span>
+        <h3>Endless Love</h3>
+        <p>May your heart always be full of love, warmth, and the joy of being truly cherished.</p>
+      </div>
+      <div class="wish-card"
+        style="--card-bg:#a855f711;--card-bg2:#a855f705;--card-border:#a855f725;--card-glow:var(--purple);--delay:.2s">
+        <span class="wish-icon">✨</span>
+        <h3>Sparkling Dreams</h3>
+        <p>May every dream you hold close come to life with magic, colour, and wonder.</p>
+      </div>
+      <div class="wish-card"
+        style="--card-bg:#f5c51811;--card-bg2:#f5c51805;--card-border:#f5c51825;--card-glow:var(--gold);--delay:.3s">
+        <span class="wish-icon">🌟</span>
+        <h3>Golden Happiness</h3>
+        <p>May each sunrise bring you new reasons to smile and each sunset leave you grateful.</p>
+      </div>
+      <div class="wish-card"
+        style="--card-bg:#3b82f611;--card-bg2:#3b82f605;--card-border:#3b82f625;--card-glow:var(--blue);--delay:.4s">
+        <span class="wish-icon">🌸</span>
+        <h3>Beautiful Adventures</h3>
+        <p>May the year ahead be filled with thrilling journeys, precious moments, and beautiful surprises.</p>
+      </div>
+      <div class="wish-card"
+        style="--card-bg:#10b98111;--card-bg2:#10b98105;--card-border:#10b98125;--card-glow:#10b981;--delay:.5s">
+        <span class="wish-icon">🎵</span>
+        <h3>Joyful Melodies</h3>
+        <p>May your life be a song that the whole world wants to hear — full of rhythm and grace.</p>
+      </div>
+      <div class="wish-card"
+        style="--card-bg:#fb718511;--card-bg2:#fb718505;--card-border:#fb718525;--card-glow:var(--rose);--delay:.6s">
+        <span class="wish-icon">🎊</span>
+        <h3>Endless Celebration</h3>
+        <p>May every single day of your life feel like a birthday — special, bright, and full of magic.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ MESSAGE ═══════════════════════════ -->
+  <section id="message">
+    <!-- floating emojis -->
+    <div class="floating-emoji" style="top:10%;left:5%;--dur:7s;--delay2:0s">🌸</div>
+    <div class="floating-emoji" style="top:20%;right:8%;--dur:5s;--delay2:1s">⭐</div>
+    <div class="floating-emoji" style="bottom:15%;left:10%;--dur:8s;--delay2:2s">💫</div>
+    <div class="floating-emoji" style="bottom:20%;right:5%;--dur:6s;--delay2:.5s">🎀</div>
+    <div class="floating-emoji" style="top:50%;left:3%;--dur:9s;--delay2:1.5s">🦋</div>
+    <div class="floating-emoji" style="top:40%;right:3%;--dur:7s;--delay2:2.5s">🌙</div>
+
+    <div class="section-title gold" style="margin-bottom:3rem">A Message From the Heart</div>
+    <div class="msg-quote">
+      On this beautiful day, the universe pauses to celebrate you — the laughter you bring, the warmth you radiate, and
+      the love you give so freely. You are someone truly extraordinary, and the world is brighter simply because you are
+      in it.
+    </div>
+    <div class="msg-quote" style="margin-top:1.5rem">
+      Here's to you, Nishu — may this year be your most magical, most joyful, and most unforgettable chapter yet. Happy
+      Birthday, beautiful soul 💖
+    </div>
+    <br />
+    <div class="msg-sign">With all the love in the world 🌹</div>
+  </section>
+
+  <!-- ═══════════════════════════ FOOTER ═══════════════════════════ -->
+  <footer>
+    <div class="hearts-row">💖💛💜💙🌸</div>
+    <p style="font-family:'Dancing Script',cursive;font-size:1.4rem;color:var(--gold);margin-bottom:.5rem">Happy
+      Birthday Nishu!</p>
+    <p>Made with ❤️ just for you • May your day be as special as you are</p>
+  </footer>
+
+  <!-- LIGHTBOX -->
+  <div id="lightbox">
+    <button id="lb-prev" onclick="lbNav(-1)">&#8592;</button>
+    <img id="lb-img" src="" alt="" />
+    <button id="lb-next" onclick="lbNav(1)">&#8594;</button>
+    <button id="lb-close" onclick="closeLightbox()">✕</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
